@@ -8,9 +8,10 @@ use App\Http\Controllers\UserController;
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
-], function ($router){
+], function ($router) {
     Route::post('/users/create', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/update-max-score', [AuthController::class, 'updateMaxScore']);
 });
 
 

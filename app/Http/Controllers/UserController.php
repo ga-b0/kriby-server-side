@@ -11,6 +11,7 @@ class UserController extends Controller
 {
     public function getAllUsers() {
         $users = User::select('name', 'max_score')
+                    ->whereNotNull('max_score')
                     ->orderBy('max_score', 'desc')
                     ->get();
         return response()->json($users);

@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*', 'auth/update-max-score'],
 
     'allowed_methods' => ['*'],
 
