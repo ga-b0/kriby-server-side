@@ -9,10 +9,13 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    public function getAllUsers(){
-        $users = User::all();
+    public function getAllUsers() {
+        $users = User::select('name', 'max_score')
+                    ->orderBy('max_score', 'desc')
+                    ->get();
         return response()->json($users);
     }
+    
 
     public function createUser(Request $request){
         
